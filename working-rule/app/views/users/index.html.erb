@@ -1,0 +1,15 @@
+<% provide(:title, 'All users') %>
+
+<h1>All users</h1>
+
+<%= page_entries_info(@user) %>
+<ul class="users">
+  <% if @user.any? %>
+    <% @user.each do |user| %>
+      <li>
+        <span><%= link_to user.name, user %></span>
+      </li>
+    <% end %>
+  <% end %> 
+</ul>
+<%= paginate(@user) %>
